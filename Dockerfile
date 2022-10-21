@@ -5,7 +5,7 @@ COPY package.json yarn.lock ./
 RUN yarn
 COPY src ./src
 COPY public ./public
-COPY ./.babelrc ./next-env.d.ts ./next.config.js ./package.json ./tsconfig.json ./yarn.lock ./
+COPY ./next-env.d.ts ./next.config.js ./package.json ./tsconfig.json ./yarn.lock ./
 RUN yarn build
 CMD yarn lint
 
