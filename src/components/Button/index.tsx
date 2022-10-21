@@ -13,11 +13,11 @@ const StyledButton = styled(motion.button)`
   border-radius: ${({ theme }) => theme.radius};
   &:hover {
     box-shadow: ${({ theme }) => theme.shadow};
-    background: ${({ theme }) => theme.palette.primaryHiglight};
+    background: ${({ theme }) => theme.palette.primaryHighlight};
   }
   &:focus {
     box-shadow: ${({ theme }) => theme.shadow};
-    background: ${({ theme }) => theme.palette.primaryHiglight};
+    background: ${({ theme }) => theme.palette.primaryHighlight};
   }
 `;
 

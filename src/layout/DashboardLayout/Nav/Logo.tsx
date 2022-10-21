@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import Link from "next/link";
-import Icon from "../../assets/Icon";
-import Brakskar from "../../assets/Logo";
+import Icon from "../../../assets/Icon";
+import Brakskar from "../../../assets/Logo";
 import { useNav } from "./NavContext";
 import { NAV_FONT_SIZE, NAV_PADDING, NAV_WIDTH_CLOSED } from "./styles";
 
@@ -43,7 +43,7 @@ const Logo = () => {
   const { open } = useNav();
 
   return (
-    <Link href="/" passHref>
+    <Link href="/src/pages" passHref>
       <StyledNavItem $open={open}>
         {open ? <StyledLogo /> : <StyledIcon />}
       </StyledNavItem>

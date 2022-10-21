@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 
 const Clock = () => {
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState<Date>();
 
   const refreshClock = useCallback(() => {
     setDate(new Date());
@@ -14,6 +14,7 @@ const Clock = () => {
     };
   }, [refreshClock]);
 
-  return <h6>{date.toLocaleTimeString()}</h6>;
+  return <h5>{date?.toLocaleTimeString()}</h5>;
 };
+
 export default Clock;

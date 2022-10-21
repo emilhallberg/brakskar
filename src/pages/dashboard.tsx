@@ -1,13 +1,19 @@
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
-import type { NextPage } from "next";
-import Page from "../layout/Page";
+import Weather from "../components/Weather";
+import { getDashboardLayout } from "../layout";
+import Page, { NextPageWithLayout } from "../layout/Page";
+import Grid from "../styles/Grid";
 
-const DashboardPage: NextPage = () => (
+const DashboardPage: NextPageWithLayout = () => (
   <Page title="Dashboard">
-    <h6>Dashboard</h6>
+    <Grid>
+      <Weather />
+    </Grid>
   </Page>
 );
 
 export const getServerSideProps = withPageAuthRequired();
+
+DashboardPage.getLayout = getDashboardLayout;
 
 export default DashboardPage;

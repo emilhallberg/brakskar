@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { ReactNode, useState } from "react";
 import styled, { useTheme } from "styled-components";
-import Card from "../../styles/Card";
+import Card from "../../../styles/Card";
 import Indicator from "./Indicator";
 
 import Item from "./Item";

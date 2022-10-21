@@ -4,10 +4,10 @@ import styled, { useTheme } from "styled-components";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useUser } from "@auth0/nextjs-auth0";
-import Card from "../styles/Card";
+import Card from "../../styles/Card";
 
 import { NavItem, NavItemIcon } from "./Nav/styles";
-import Avatar from "../components/Avatar";
+import Avatar from "../../components/Avatar";
 
 const StyledNav = styled(Card)`
   position: relative;

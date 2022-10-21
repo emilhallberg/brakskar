@@ -15,7 +15,7 @@ export type NextPageWithLayout = NextPage & {
 const Page: FC<Props> = ({ title, children }: Props) => (
   <>
     <Head>
-      <title>Brakskär - {title}</title>
+      <title>{title}</title>
     </Head>
     {children}
   </>
