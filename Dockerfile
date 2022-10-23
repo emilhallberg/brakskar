@@ -5,7 +5,7 @@ COPY package.json yarn.lock ./
 RUN yarn
 COPY src ./src
 COPY public ./public
-COPY .env ./next-env.d.ts ./next.config.js ./package.json ./tsconfig.json ./yarn.lock ./
+COPY ./next-env.d.ts ./next.config.js ./package.json ./tsconfig.json ./yarn.lock ./
 RUN yarn build
 CMD yarn lint
 
@@ -18,5 +18,6 @@ COPY ./package.json ./yarn.lock ./
 COPY --from=test /app/node_modules ./node_modules
 RUN yarn install --ignore-scripts --prefer-offline
 COPY ./public ./public
+COPY ./.env ./.env
 COPY --from=test /app/.next ./.next
 CMD yarn start
