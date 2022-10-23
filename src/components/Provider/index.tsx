@@ -77,7 +77,12 @@ const Content = styled(motion.section)`
   grid-gap: ${({ theme }) => theme.spacing(1)};
 `;
 
-export const ProviderContext = createContext({
+interface ProviderInterface {
+  open: string | null;
+  toggle(id: string): string;
+}
+
+export const ProviderContext = createContext<ProviderInterface>({
   open: null,
   toggle: (id: string) => id,
 });

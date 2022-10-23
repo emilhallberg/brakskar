@@ -34,6 +34,8 @@ interface TelldusClient {
   version: string; // "1.3.2";
   type: string; // "TellStick ZNet Lite v2";
   ip: string; // "158.174.23.15";
+  longitude: string;
+  latitude: string;
 }
 
 interface TelldusSensor {

@@ -15,16 +15,14 @@ const Stack = styled(Grid)`
 `;
 
 const ProvidersPage: NextPageWithLayout = () => {
-  const [open, setOpen] = useState(null);
+  const [open, setOpen] = useState<string | null>(null);
   const { providers } = useGetProviders();
 
   const toggle = useCallback(
-    (id) => {
-      if (open === id) {
-        setOpen(null);
-      } else {
-        setOpen(id);
-      }
+    (id: string) => {
+      if (open === id) setOpen(null);
+      else setOpen(id);
+
       return id;
     },
     [open],

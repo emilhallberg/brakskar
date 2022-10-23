@@ -96,6 +96,7 @@ const LandingLayout = ({ children }: Props) => (
         <Link href="/dashboard">Hem</Link>
         <Link href="/midsummer">Midsommar</Link>
         <Link href="/weather">Väder</Link>
+        <Link href="/wiki">Wiki</Link>
       </Nav>
       <Footer>
         <p>BRAKSKÄR</p>

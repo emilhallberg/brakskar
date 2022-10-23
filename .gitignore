@@ -24,6 +24,7 @@
 *.pem
 .eslintcache
 .idea
+tsconfig.tsbuildinfo
 
 # debug
 npm-debug.log*
