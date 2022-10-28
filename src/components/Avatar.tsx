@@ -28,11 +28,7 @@ interface AvatarProps {
 
 const Avatar: FC<AvatarProps> = ({ src, alt, children }: AvatarProps) => (
   <Container>
-    {src && alt ? (
-      <Image src={src} alt={alt} layout="fill" priority />
-    ) : (
-      children
-    )}
+    {src && alt ? <Image src={src} alt={alt} fill priority /> : children}
   </Container>
 );
 

@@ -17,7 +17,7 @@ const Item = ({ to, icon, children }: ItemProps) => {
   const active = pathname === to;
 
   return (
-    <Link href={to} passHref>
+    <Link href={to} passHref style={{ textDecoration: "none" }}>
       <NavItem $active={active} $open={open} whileTap={{ scale: 0.9 }}>
         <NavItemIcon className={`gg-${icon}`} />
         {open && children}

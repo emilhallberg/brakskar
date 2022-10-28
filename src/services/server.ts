@@ -14,7 +14,7 @@ export interface WithServerHandler {
   res: NextApiResponse;
   auth: {
     management: ManagementClient<any, any>;
-    metadata: Metadata;
+    metadata?: Record<string, Metadata>;
   };
   providers: { telldus: Provider };
 }

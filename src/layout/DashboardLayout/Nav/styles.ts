@@ -11,7 +11,7 @@ export const NavItemIcon = styled(motion.i)`
   transform: scale(0.9);
 `;
 
-export const NavItem = styled(motion.a)<{
+export const NavItem = styled(motion.div)<{
   $active?: boolean;
   $open?: boolean;
 }>`

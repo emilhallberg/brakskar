@@ -13,9 +13,9 @@ const DashboardPage: NextPageWithLayout = () => (
       <Image
         src="/img/background.jpg"
         alt="Background"
-        layout="fill"
-        objectFit="cover"
+        fill
         priority
+        style={{ objectFit: "cover" }}
       />
     </Background>
   </Page>

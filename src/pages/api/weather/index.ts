@@ -36,7 +36,7 @@ const convert = ({ properties: { timeseries } }: YrWeatherResponse) =>
 
 const handler = async ({ req, res, auth }: WithServerHandler) => {
   if (req.method === "GET") {
-    const { yr } = auth.metadata;
+    const yr = auth.metadata?.yr;
 
     const { query } = req;
 
@@ -72,7 +72,7 @@ const handler = async ({ req, res, auth }: WithServerHandler) => {
         res.status(404).json({ message: "Internal error." });
       };
 
-      await fetch(url, {
+      fetch(url, {
         method: "GET",
         headers: {
           "User-Agent": "Brakskar/0.1",
