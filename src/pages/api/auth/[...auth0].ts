@@ -9,8 +9,9 @@ export default handleAuth({
           scope: process.env.AUTH0_SCOPE,
         },
       });
-    } catch (error) {
-      res.status(400).end(error);
+    } catch (error: any) {
+      console.info("handleAuth error here");
+      res.status(error?.status || 400).end(error?.message || error);
     }
   },
 });
