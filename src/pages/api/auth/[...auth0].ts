@@ -10,7 +10,6 @@ export default handleAuth({
         },
       });
     } catch (error: any) {
-      console.info("handleAuth error here");
       res.status(error?.status || 400).end(error?.message || error);
     }
   },
