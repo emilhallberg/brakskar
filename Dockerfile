@@ -5,7 +5,7 @@ COPY package.json yarn.lock ./
 RUN yarn
 COPY src ./src
 COPY public ./public
-COPY .env ./next-env.d.ts ./next.config.js ./package.json ./tsconfig.json ./yarn.lock ./
+COPY ./next-env.d.ts ./next.config.js ./package.json ./tsconfig.json ./yarn.lock ./
 
 ARG API_TELLDUS
 ENV API_TELLDUS=$API_TELLDUS
