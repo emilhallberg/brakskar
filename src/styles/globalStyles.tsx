@@ -11,22 +11,22 @@ const GlobalStyles = createGlobalStyle`
 
   h1 {
     margin: 0;
-    font-size: 5rem;
+    font-size: 3rem;
     font-weight: 500;
   }
   h2 {
     margin: 0;
-    font-size: 4rem;
+    font-size: 2.5rem;
     font-weight: 500;
   }
   h3 {
     margin: 0;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 500;
   }
   h4 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 500;
   }
   h5 {

@@ -16,12 +16,12 @@ const Container = styled(motion.div)`
   box-sizing: border-box;
   justify-self: center;
   @media (max-width: 768px) {
-    padding: ${({ theme }) => theme.spacing(1)};
     display: grid;
     grid-template-columns: 1fr max-content;
     grid-template-rows: max-content 1fr;
     grid-template-areas: ". ." "main main";
-    grid-gap: ${({ theme }) => theme.spacing(1)};
+    grid-gap: ${({ theme }) => theme.spacing(0.7)};
+    padding: ${({ theme }) => theme.spacing(0.7)};
   }
 `;
 

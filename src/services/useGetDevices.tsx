@@ -9,7 +9,9 @@ interface UseGetDevices extends UseService {
 }
 
 const useGetDevices = (): UseGetDevices => {
-  const { data, error, mutate } = useSWR("/devices", client.get);
+  const { data, error, mutate } = useSWR("/devices", client.get, {
+    revalidateOnFocus: false,
+  });
 
   return { devices: data || [], loading: !data, mutate, error };
 };

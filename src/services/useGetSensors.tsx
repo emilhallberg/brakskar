@@ -9,7 +9,9 @@ interface UseGetSensors extends UseService {
 }
 
 const useGetSensors = (): UseGetSensors => {
-  const { data, error, mutate } = useSWR("/sensors", client.get);
+  const { data, error, mutate } = useSWR("/sensors", client.get, {
+    revalidateOnFocus: false,
+  });
 
   return { sensors: data || [], loading: !data, mutate, error };
 };

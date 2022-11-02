@@ -40,47 +40,38 @@ const handler = async ({ req, res, auth }: WithServerHandler) => {
 
     const { query } = req;
 
-    if (
-      !(yr?.name || yr?.latitude || yr?.longitude) ||
-      !(query.lat || query.lon)
-    ) {
-      res.status(400).json({ message: "Missing query params." });
-    } else {
-      const lat = yr.latitude || query.lat;
-      const lon = yr.longitude || query.lon;
+    const lat = yr?.latitude || query.lat;
+    const lon = yr?.longitude || query.lon;
 
-      const url = `${YR_API_PATH}?lat=${lat}&lon=${lon}`;
+    const url = `${YR_API_PATH}?lat=${lat}&lon=${lon}`;
 
-      const handleResult = async (result: Response) => {
-        if (result.ok) {
-          const [data] = await result.json().then(convert);
-          if (data) {
-            res.status(result.status).json({ name: yr.name, ...data });
-          } else {
-            res
-              .status(result.status)
-              .json({ message: "Weather data not found." });
-          }
+    const handleResult = async (result: Response) => {
+      if (result.ok) {
+        const [data] = await result.json().then(convert);
+        if (data) {
+          res.status(result.status).json({ name: yr?.name, ...data });
         } else {
           res
             .status(result.status)
             .json({ message: "Weather data not found." });
         }
-      };
+      } else {
+        res.status(result.status).json({ message: "Weather data not found." });
+      }
+    };
 
-      const handleError = async () => {
-        res.status(404).json({ message: "Internal error." });
-      };
+    const handleError = async () => {
+      res.status(404).json({ message: "Internal error." });
+    };
 
-      fetch(url, {
-        method: "GET",
-        headers: {
-          "User-Agent": "Brakskar/0.1",
-        },
-      })
-        .then(handleResult)
-        .catch(handleError);
-    }
+    fetch(url, {
+      method: "GET",
+      headers: {
+        "User-Agent": "Brakskar/0.1",
+      },
+    })
+      .then(handleResult)
+      .catch(handleError);
   } else {
     res.status(404).json({ message: "Method not found." });
   }
