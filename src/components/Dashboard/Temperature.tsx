@@ -6,7 +6,7 @@ const Container = styled(Element)`
   grid-area: temperature;
   display: grid;
   place-items: center;
-  grid-template-rows: ${({ theme }) => theme.size(0.8)};
+  grid-template-rows: ${({ theme }) => theme.size(1)};
   grid-template-columns: ${({ theme }) => theme.size(1.5)};
 `;
 

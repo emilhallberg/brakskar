@@ -7,12 +7,14 @@ const Climate = () => {
 
   return (
     <Grid gridArea="climate">
-      {sensors.map(({ id, online, name, data }) => (
-        <Sensor key={id} id={id} online={online}>
-          <Sensor.Value>{`${data?.temp?.value}°`}</Sensor.Value>
-          <Sensor.Title>{name}</Sensor.Title>
-        </Sensor>
-      ))}
+      {sensors
+        .filter(({ data }) => data.temp)
+        .map(({ id, online, name, data }) => (
+          <Sensor key={id} id={id} online={online}>
+            <Sensor.Value>{`${data?.temp?.value}°`}</Sensor.Value>
+            <Sensor.Title>{name}</Sensor.Title>
+          </Sensor>
+        ))}
     </Grid>
   );
 };

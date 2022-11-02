@@ -64,7 +64,7 @@ const handler = async ({ req, res, auth }: WithServerHandler) => {
       res.status(404).json({ message: "Internal error." });
     };
 
-    fetch(url, {
+    await fetch(url, {
       method: "GET",
       headers: {
         "User-Agent": "Brakskar/0.1",

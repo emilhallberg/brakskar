@@ -8,15 +8,16 @@ import Card from "../../styles/Card";
 const Container = styled(Card)`
   display: grid;
   width: ${({ theme }) => theme.size(3)};
-  height: ${({ theme }) => theme.size(1.5)};
-  grid-template-columns: ${({ theme }) => theme.size(1)} 1fr;
+  height: ${({ theme }) => theme.size(1.3)};
+  padding: 0 ${({ theme }) => theme.spacing(1)};
+  grid-gap: 0 ${({ theme }) => theme.spacing(0.7)};
+  grid-template-columns: max-content 1fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: "icon title" "icon state";
   outline: none;
   border: none;
   overflow: hidden;
   cursor: pointer;
-  padding: 0;
   &:hover,
   &:focus-visible {
     background-color: ${({ theme }) => theme.palette.highlight};
@@ -31,8 +32,11 @@ const Container = styled(Card)`
 
 const Title = styled.h6`
   grid-area: title;
-  justify-self: flex-start;
+  text-align: left;
   align-self: flex-end;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const State = styled.p`

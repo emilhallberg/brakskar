@@ -15,12 +15,7 @@ const DevicesPage: NextPageWithLayout = () => {
       <Grid>
         {sensors.map(({ id, online, name, data }) => (
           <Sensor key={id} id={id} online={online}>
-            {data?.temp && (
-              <Sensor.Value>
-                {`${data.temp.value}°`}
-                <p>{`${data?.humidity?.value}%`}</p>
-              </Sensor.Value>
-            )}
+            {data?.temp && <Sensor.Value>{`${data.temp.value}°`}</Sensor.Value>}
             {data?.watt && <Sensor.Value>{`${data.watt.value}w`}</Sensor.Value>}
             <Sensor.Title>{name}</Sensor.Title>
           </Sensor>
