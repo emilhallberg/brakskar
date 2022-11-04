@@ -7,7 +7,7 @@ const light = {
     highlight: "whitesmoke",
     primary: "rgba(58, 94, 202, 1)",
     primaryText: "white",
-    primaryHighlight: "#2452db",
+    primaryHighlight: "#497aff",
     bulb: "#dada31",
     success: "green",
     error: "red",

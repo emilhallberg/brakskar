@@ -17,14 +17,24 @@ const StyledInput = styled(motion.input)`
   background: ${({ theme }) => theme.palette.highlight};
   color: ${({ theme }) => theme.palette.text};
   outline: none;
-  border: none;
+  border: 1px solid transparent;
   border-radius: ${({ theme }) => theme.radius};
   font-size: 0.9rem;
   &:hover,
   :active,
   :focus {
-    outline: 1px solid ${({ theme }) => theme.palette.primary};
+    border: 1px solid ${({ theme }) => theme.palette.primary};
     box-shadow: ${({ theme }) => theme.shadow};
+  }
+  &:before {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 5px solid #ffea00;
   }
 `;
 

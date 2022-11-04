@@ -31,6 +31,9 @@ export const NavItem = styled(motion.div)<{
   background-color: transparent;
   justify-content: center;
   cursor: pointer;
+  margin: 0;
+  color: ${({ theme, $active }) =>
+    $active ? theme.palette.primary : theme.palette.text};
 
   &:hover,
   &:focus-visible {

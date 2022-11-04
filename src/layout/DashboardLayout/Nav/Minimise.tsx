@@ -6,6 +6,8 @@ import { NavItemIcon, NavItem, NAV_WIDTH_CLOSED } from "./styles";
 
 const StyledNavItem = styled(NavItem)`
   grid-template-columns: ${NAV_WIDTH_CLOSED};
+  border-top-left-radius: ${({ theme }) => theme.radius};
+  border-top-right-radius: ${({ theme }) => theme.radius};
 `;
 
 const Minimise = () => {

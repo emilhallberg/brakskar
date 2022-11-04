@@ -44,6 +44,7 @@ const Title = styled.h6`
   display: grid;
   align-self: center;
   justify-self: flex-start;
+  color: ${({ theme }) => theme.palette.text};
 `;
 
 const Icon = styled(motion.i)<{ $state: "connected" | "disconnected" }>`
