@@ -20,7 +20,7 @@ const Container = styled.div`
     "devices devices devices devices";
 
   @media (max-width: 768px) {
-    grid-template-columns: min-content min-content;
+    grid-template-columns: repeat(3, min-content);
     grid-gap: ${({ theme }) => theme.spacing(0.7)};
     grid-template-areas:
       "title title title"

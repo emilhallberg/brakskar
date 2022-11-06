@@ -8,7 +8,7 @@ import Card from "../../styles/Card";
 const Container = styled(Card)`
   display: grid;
   width: ${({ theme }) => theme.size(3)};
-  height: ${({ theme }) => theme.size(1.3)};
+  height: ${({ theme }) => theme.size(1.2)};
   padding: 0 ${({ theme }) => theme.spacing(1)};
   grid-gap: 0 ${({ theme }) => theme.spacing(0.7)};
   grid-template-columns: max-content 1fr;
@@ -37,6 +37,7 @@ const Title = styled.h6`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: ${({ theme }) => theme.palette.text};
 `;
 
 const State = styled.p`
@@ -44,6 +45,7 @@ const State = styled.p`
   justify-self: flex-start;
   opacity: 0.6;
   font-size: 0.7rem;
+  color: ${({ theme }) => theme.palette.text};
 `;
 
 const Icon = styled(motion.i)<{ $state: DeviceState }>`
@@ -52,6 +54,7 @@ const Icon = styled(motion.i)<{ $state: DeviceState }>`
   align-self: center;
   background: none;
   margin-bottom: 10px;
+  color: ${({ theme }) => theme.palette.text};
 
   ${({ theme, $state }) =>
     $state === "on"

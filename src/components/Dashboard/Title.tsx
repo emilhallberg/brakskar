@@ -5,6 +5,8 @@ const StyledTitle = styled.h4`
   grid-area: title;
   display: grid;
   align-items: center;
+  height: ${({ theme }) => theme.size(1)};
+  align-self: center;
 `;
 
 interface Props {

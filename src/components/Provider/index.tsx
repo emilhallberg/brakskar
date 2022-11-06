@@ -69,6 +69,7 @@ const State = styled.p`
   grid-area: state;
   justify-self: flex-start;
   opacity: 0.8;
+  color: ${({ theme }) => theme.palette.text};
 `;
 
 const Content = styled(motion.section)`

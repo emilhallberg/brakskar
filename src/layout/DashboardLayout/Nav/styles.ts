@@ -41,6 +41,7 @@ export const NavItem = styled(motion.div)<{
     background-color: ${({ theme }) => theme.palette.highlight};
   }
   &:active {
+    color: ${({ theme }) => theme.palette.text};
     background-color: transparent;
   }
 `;

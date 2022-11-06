@@ -13,6 +13,9 @@ interface YrWeatherResponse {
             air_temperature: number;
             relative_humidity: number;
             wind_speed: number;
+            air_pressure_at_sea_level: number;
+            cloud_area_fraction: number;
+            wind_from_direction: number;
           };
         };
       };
@@ -26,7 +29,8 @@ const convert = ({ properties: { timeseries } }: YrWeatherResponse) =>
       time,
       temperature: `${data.instant.details.air_temperature}°`,
       humidity: `${data.instant.details.relative_humidity}%`,
-      wind: `${data.instant.details.wind_speed}m/s`,
+      wind: `${data.instant.details.wind_speed}`,
+      windDirection: data.instant.details.wind_from_direction,
     }))
     .filter(
       ({ time }) =>

@@ -6,8 +6,9 @@ const Container = styled(Element)`
   grid-area: temperature;
   display: grid;
   place-items: center;
-  grid-template-rows: ${({ theme }) => theme.size(1)};
-  grid-template-columns: ${({ theme }) => theme.size(1.5)};
+  grid-template-columns: ${({ theme }) => theme.size(1.3)};
+  height: ${({ theme }) => theme.size(0.75)};
+  align-self: center;
 `;
 
 interface Props {

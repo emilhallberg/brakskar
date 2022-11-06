@@ -2,12 +2,13 @@ import { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 import Element from "../Element";
 
-const Container = styled(Element)`
+export const Container = styled(Element)`
   grid-area: time;
   display: grid;
   place-items: center;
-  grid-template-rows: ${({ theme }) => theme.size(1)};
-  grid-template-columns: ${({ theme }) => theme.size(1.5)};
+  grid-template-columns: ${({ theme }) => theme.size(1.3)};
+  height: ${({ theme }) => theme.size(0.75)};
+  align-self: center;
 `;
 
 const Time = () => {
