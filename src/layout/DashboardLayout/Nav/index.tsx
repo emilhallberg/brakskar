@@ -36,7 +36,7 @@ interface NavProps {
 const Nav = ({ children = [] }: NavProps) => {
   const { pathname } = useRouter();
   const [open, isOpen] = useState(false);
-  const [minimised, isMinimised] = useState(false);
+  const [minimised, isMinimised] = useState(true);
   const theme = useTheme();
 
   const width = open ? theme.size(4) : theme.size(1);

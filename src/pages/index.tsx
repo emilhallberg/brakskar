@@ -1,31 +1,7 @@
-import Image from "next/image";
-import styled from "styled-components";
-import Link from "next/link";
 import Page, { NextPageWithLayout } from "../layout/Page";
 import { getLandingLayout } from "../layout";
 import Section from "../components/StartPage/Section";
 import { ranking } from "./ranking";
-
-const One = styled.div`
-  position: relative;
-  border-right: 1px solid #ffffff;
-`;
-
-const Three = styled.div`
-  position: relative;
-  background: #efdccc;
-  border-right: 1px solid #ffffff;
-`;
-
-const Four = styled.div`
-  background: #dbc2ad;
-  border-right: 1px solid #ffffff;
-`;
-
-const Five = styled.div`
-  background: #d1b7a1;
-  border-right: 1px solid #ffffff;
-`;
 
 const DashboardPage: NextPageWithLayout = () => (
   <Page title="Brakskär">
