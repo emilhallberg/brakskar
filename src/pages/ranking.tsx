@@ -9,16 +9,19 @@ type Rank = {
 };
 
 export const ranking: Rank[] = [
-  { id: "1", name: "Emil", points: 5 + 1 + 1 },
-  { id: "2", name: "Victor", points: 2 + 1 },
-  { id: "3", name: "Anders", points: 7 + 1 + 1 },
-  { id: "4", name: "Laila", points: 3 + 1 },
-  { id: "5", name: "Petra", points: 5 + 1 + 1 },
-  { id: "6", name: "Paulina", points: 8 + 1 },
-  { id: "7", name: "Gabriel", points: 7 + 1 + 1 },
-  { id: "8", name: "Suppis", points: 2 + 1 + 1 },
-  { id: "9", name: "Sofia", points: 3 + 1 + 1 + 1 },
-  { id: "10", name: "Kalle", points: 8 + 1 + 1 },
+  { id: "1", name: "Emil", points: 5 + 1 + 1 + 6 },
+  { id: "2", name: "Victor", points: 2 + 1 + 6 },
+  { id: "3", name: "Anders", points: 7 + 1 + 1 + 4 },
+  { id: "4", name: "Laila", points: 3 + 1 + 3 },
+  { id: "5", name: "Petra", points: 5 + 1 + 1 + 6 },
+  { id: "6", name: "Paulina", points: 8 + 1 + 4 },
+  { id: "7", name: "Gabriel", points: 7 + 1 + 1 + 4 },
+  { id: "8", name: "Suppis", points: 2 + 1 + 1 + 3 },
+  { id: "9", name: "Sofia", points: 3 + 1 + 1 + 1 + 7 },
+  { id: "10", name: "Kalle", points: 8 + 1 + 1 + 9 },
+  { id: "11", name: "Fredrik", points: 3 },
+  { id: "12", name: "Erika", points: 3 },
+  { id: "13", name: "Valter", points: 3 },
 ];
 
 const Container = styled.div`
@@ -38,6 +41,7 @@ const Table = styled.table`
     height: 50px;
     padding: 0 8px;
     text-align: left;
+    border-radius: 4px;
   }
   tbody {
     tr {
@@ -85,6 +89,9 @@ const RankingPage: NextPage = () => (
       <section>
         <h2>Senaste tävlingar</h2>
         <ul>
+          <li>Brakskär Open 2023</li>
+          <li>Midsommar 2023 - Lekar</li>
+          <li>Midsommar 2023 - Quiz</li>
           <li>Fuerteventura Open</li>
           <li>Fuerteventura Volleyboll</li>
           <li>Flygplansquiz</li>
@@ -101,6 +108,7 @@ const RankingPage: NextPage = () => (
           <li>Oavgjort ger plus minus noll poäng</li>
           <li>Deltagande i officiell tävling ger poäng</li>
           <li>Vinst i match ger en poäng</li>
+          <li>Vinst av Brakskär Open ger 3 poäng</li>
         </ul>
       </section>
     </Container>
