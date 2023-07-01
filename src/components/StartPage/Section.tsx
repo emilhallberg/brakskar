@@ -9,7 +9,7 @@ const StyledSection = styled.section`
   border-right: 1px solid #ffffff;
   display: grid;
   grid-template-rows: 1fr max-content;
-  padding: 20vh 3vw 3vw;
+  padding: 20vh 40px 40px;
 
   li {
     margin: 8px 0;

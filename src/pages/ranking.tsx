@@ -21,7 +21,8 @@ export const ranking: Rank[] = [
   { id: "10", name: "Kalle", points: 8 + 1 + 1 + 9 },
   { id: "11", name: "Fredrik", points: 3 },
   { id: "12", name: "Erika", points: 3 },
-  { id: "13", name: "Valter", points: 3 },
+  { id: "13", name: "Signe", points: 3 },
+  { id: "13", name: "Valter", points: 2 },
 ];
 
 const Container = styled.div`
