@@ -1,5 +1,5 @@
 # Build and Test
-FROM node:alpine3.11 as test
+FROM node:21.4.0-alpine3.18 as test
 WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn
@@ -20,7 +20,7 @@ RUN yarn build
 CMD yarn lint
 
 # Production
-FROM node:alpine3.11 as prod
+FROM node:21.4.0-alpine3.18 as prod
 ENV NODE_ENV=production
 
 WORKDIR /app
@@ -29,4 +29,5 @@ COPY --from=test /app/node_modules ./node_modules
 RUN yarn install --ignore-scripts --prefer-offline
 COPY ./public ./public
 COPY --from=test /app/.next ./.next
+USER 1000
 CMD yarn start
