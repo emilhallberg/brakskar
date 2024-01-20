@@ -29,5 +29,6 @@ COPY --from=test /app/node_modules ./node_modules
 RUN yarn install --ignore-scripts --prefer-offline
 COPY ./public ./public
 COPY --from=test /app/.next ./.next
+RUN chown 1000:1000 -R .next
 USER 1000
 CMD yarn start
