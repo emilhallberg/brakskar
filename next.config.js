@@ -2,7 +2,10 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ["lh3.googleusercontent.com", "s.gravatar.com"],
+    remotePatterns: [
+      { hostname: "lh3.googleusercontent.com" },
+      { hostname: "s.gravatar.com" },
+    ],
   },
   compiler: {
     styledComponents: true,

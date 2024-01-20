@@ -58,7 +58,7 @@ const Section: FC<Props> = ({
   backgroundColor = "#f2e5d9",
   children,
 }) => (
-  <StyledSection style={{ backgroundColor }}>
+  <StyledSection style={{ backgroundColor, zIndex: 10 }}>
     {backgroundImage && (
       <Image
         src={backgroundImage}

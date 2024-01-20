@@ -23,7 +23,7 @@ const Content = styled.aside`
   grid-template-rows: ${({ theme }) => theme.size(2)} 1fr max-content;
   padding: ${({ theme }) => theme.spacing(3)};
   background: ${({ theme }) => theme.palette.card};
-  z-index: 1;
+  z-index: 20;
   @media (max-width: 768px) {
     z-index: -1;
   }

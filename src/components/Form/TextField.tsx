@@ -79,7 +79,7 @@ const TextField: FC<TextFieldProps> = ({
         type={type}
         value={values[name] || ""}
         placeholder={placeholder}
-        onChange={(e) => onChange(e)}
+        onChange={onChange}
         required={required}
       />
     </StyledLabel>
