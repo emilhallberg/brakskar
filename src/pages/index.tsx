@@ -8,22 +8,6 @@ const DashboardPage: NextPageWithLayout = () => (
     <Section backgroundImage="/img/background.jpg" />
     <Section
       backgroundColor="#f2e5d9"
-      linkText="Läs mer om Brakskär"
-      linkHref="https://sv.wikipedia.org/wiki/Braksk%C3%A4r"
-    >
-      <h4>Brakskär</h4>
-      <p>
-        En ö i skärgården utanför Iggesund i Hudiksvalls kommun, Gävleborgs län.
-        På ön finns ett 30-tal fritidshus.
-      </p>
-      <p>
-        Iggesund ligger söder om Hudiksvall, Österut gränsar samhället till
-        Bottenhavet med en skärgård där bland annat den lilla ön Brakskär finns.
-        Iggesund ligger på ön Iggesundsön, som är Hälsinglands största ö.
-      </p>
-    </Section>
-    <Section
-      backgroundColor="#efdccc"
       linkHref="/ranking"
       linkText="Se aktuell ranking"
     >
@@ -36,6 +20,17 @@ const DashboardPage: NextPageWithLayout = () => (
             <li key={id}>{name}</li>
           ))}
       </ol>
+    </Section>
+    <Section
+      backgroundColor="#efdccc"
+      linkHref="/snapsvisor"
+      linkText="Ta en snaps"
+    >
+      <h4>Snapsvisor</h4>
+      <p>
+        Ta dig en snaps eller två och sjung med till de klassiska snapsvisorna
+        sjunga på Brakskär.
+      </p>
     </Section>
   </Page>
 );

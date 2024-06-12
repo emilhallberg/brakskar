@@ -28,15 +28,17 @@ const StyledSection = styled.section`
     text-decoration: none;
     transition: background-color 200ms ease-out;
     margin-bottom: 20px;
+    color: black;
 
     &:visited,
     :active,
-    :link {
+    :link,
+    :valid {
       color: black;
     }
 
     &:hover {
-      color: white;
+      color: white !important;
       background-color: ${({ theme }) => theme.palette.primary};
       border: 1px solid transparent;
     }
