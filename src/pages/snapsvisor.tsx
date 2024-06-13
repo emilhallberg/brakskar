@@ -1,7 +1,14 @@
 import styled, { createGlobalStyle } from "styled-components";
-import Image from "next/image";
 import Link from "next/link";
+import { Dancing_Script } from "next/font/google";
 import Page, { NextPageWithLayout } from "../layout/Page";
+
+const dancingScript = Dancing_Script({
+  style: ["normal"],
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+});
 
 const GlobalStyles = createGlobalStyle`
   body{
@@ -10,10 +17,10 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const Container = styled.main`
-  background: #faf3f3;
   display: grid;
   justify-content: center;
   grid-template-columns: 400px;
+  background: #faf3f3 url("/img/flowers.png") repeat-y left fixed;
 
   @media (max-width: 768px) {
     grid-template-columns: 90%;
@@ -22,7 +29,7 @@ const Container = styled.main`
 
 const Section = styled.section`
   position: relative;
-  height: 80vh;
+  height: 90vh;
   z-index: 0;
   text-align: center;
   display: flex;
@@ -60,7 +67,12 @@ const DrinkingSongsPage: NextPageWithLayout = () => (
     />
     <Container>
       <Section>
-        <h1>Snapsvisor</h1>
+        <h1
+          className={dancingScript.className}
+          style={{ textTransform: "none", fontSize: "3rem", fontWeight: "400" }}
+        >
+          Snapsvisor
+        </h1>
         <Link href="#Kranmannen">Kranmannen</Link>
         <Link href="#Nubbe av granved">Nubbe av granved</Link>
         <Link href="#Köpa byxor">Köpa byxor</Link>
@@ -250,8 +262,8 @@ const DrinkingSongsPage: NextPageWithLayout = () => (
           <br />
           <br />
           Och den långa ludna svansen
-        </p>
-        <p>
+          <br />
+          <br />
           Vad i allsin dar?
           <br />
           <br />
