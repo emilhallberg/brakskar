@@ -8,6 +8,25 @@ const DashboardPage: NextPageWithLayout = () => (
     <Section backgroundImage="/img/background.jpg" />
     <Section
       backgroundColor="#f2e5d9"
+      linkHref="/brakfest"
+      linkText="Till festen"
+    >
+      <h4>Brakfest</h4>
+      <p>Emil fyller 30 år och det ska firas med en brakfest på Brakskär.</p>
+    </Section>
+    <Section
+      backgroundColor="#efdccc"
+      linkHref="/snapsvisor"
+      linkText="Ta en snaps"
+    >
+      <h4>Snapsvisor</h4>
+      <p>
+        Ta dig en snaps eller två och sjung med till de klassiska snapsvisorna
+        sjunga på Brakskär.
+      </p>
+    </Section>
+    <Section
+      backgroundColor="#f2e5d9"
       linkHref="/ranking"
       linkText="Se aktuell ranking"
     >
@@ -20,17 +39,6 @@ const DashboardPage: NextPageWithLayout = () => (
             <li key={id}>{name}</li>
           ))}
       </ol>
-    </Section>
-    <Section
-      backgroundColor="#efdccc"
-      linkHref="/snapsvisor"
-      linkText="Ta en snaps"
-    >
-      <h4>Snapsvisor</h4>
-      <p>
-        Ta dig en snaps eller två och sjung med till de klassiska snapsvisorna
-        sjunga på Brakskär.
-      </p>
     </Section>
   </Page>
 );
