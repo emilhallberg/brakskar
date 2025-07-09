@@ -12,7 +12,7 @@ const DashboardPage: NextPageWithLayout = () => (
       linkText="Till festen"
     >
       <h4>Brakfest</h4>
-      <p>Emil fyller 30 år och det ska firas med en brakfest på Brakskär.</p>
+      <p>Emil har fyllt 30 år och det ska firas med en Brakfest på Brakskär!</p>
     </Section>
     <Section
       backgroundColor="#efdccc"

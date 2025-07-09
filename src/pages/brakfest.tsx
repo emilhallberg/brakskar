@@ -27,8 +27,8 @@ const pins: Pin[] = [
         Tält på B-plan.
         <br />
         <br />
-        Här finner ni Brakskär Glamping. Här sover Evangelina, Hugo, Jonas och
-        Moa.
+        Här på Brakskär Glamping sover vildmarkspersonerna - Evangelina, Hugo,
+        Jonas och Moa.
       </p>
     ),
   },
@@ -40,8 +40,10 @@ const pins: Pin[] = [
         Vita huset.
         <br />
         <br />
-        Här bor Emils far Anders och styvmor Laila. Här sover även Kalle,
-        Paulina, Gabriel, Agahan, Peter och Olivier.
+        Här bor Emils far Anders och styvmor Laila. Min far kan allt här i
+        stugan, så för er frågvisa finns han till för att svara på alla era
+        frågor! Här sover även Kalle, Paulina, Gabriel, Agahan, Peter och
+        Olivier.
       </p>
     ),
   },
@@ -69,23 +71,8 @@ const pins: Pin[] = [
         Kyrkan.
         <br />
         <br />
-        Här bor Emils faster Erika och hennes familj. Fredrik, Maja, Ester,
-        Hugo, Elias, Signe och Valter.
-      </p>
-    ),
-  },
-  {
-    emoji: "🍺",
-    style: { left: "1030px", top: "270px" },
-    tooltip: (
-      <p>
-        Tapar Bay Marina.
-        <br />
-        <br />
-        Detta är Emils farfars (aka Drutten) stuga. Älskade Drutten, han såg
-        fram emot att få träffa er alla. Men nog tror vi att han firar med oss
-        från himlen 🤍🪽. Låt oss ta en druttskål tillsammans här! Det hade han
-        nog velat! Här sover även Emil, Suppis, John och Angelica.
+        Här bor Emils favorit faster Erika och hennes familj. Fredrik, Maja,
+        Ester, Hugo, Elias, Signe och Valter.
       </p>
     ),
   },
@@ -97,8 +84,8 @@ const pins: Pin[] = [
         Center Court.
         <br />
         <br />
-        En aktivitetsyta. Här kan ni bl.a spela mjuktennis och lekar kommer att
-        hållas här.
+        En aktivitetsyta. Här kommer lekar (eventuella uppträdande) att hållas.
+        Ni kan även här möta den regerande Brakskär Open mästaren i mjuktennis.
       </p>
     ),
   },
@@ -110,7 +97,7 @@ const pins: Pin[] = [
         Stora bryggan.
         <br />
         <br />
-        Här kan ni ta ett dopp!
+        Här kan ni som gillar att bada ta ett dopp!
       </p>
     ),
   },
@@ -138,8 +125,7 @@ const pins: Pin[] = [
         Ett dass med två sitsar, rekommenderar att gå tillsammans - mysigt!
         <br />
         <br />
-        Behöver herrar kissa, ber vi er gärna att gå en bit in mot skogen. Mer
-        info under rundvandringen.
+        Behöver herrar kissa, ber vi er gärna att gå en bit in mot skogen.
       </p>
     ),
   },
@@ -163,8 +149,8 @@ const pins: Pin[] = [
         Flaggstång.
         <br />
         <br />
-        Samlingsplats, när vi vill ha allas uppmärksamhet ringer vi på en klocka
-        och då samlas vi här!
+        Samlingsplats under dagen och kvällen. När vi vill ha allas
+        uppmärksamhet ringer vi på en klocka och då samlas vi här!
       </p>
     ),
   },
@@ -178,6 +164,21 @@ const pins: Pin[] = [
         <br />
         Här kan upp till 6 personer basta. Det finns även en liten lounge
         utanför.
+      </p>
+    ),
+  },
+  {
+    emoji: "🍺",
+    style: { left: "1030px", top: "270px" },
+    tooltip: (
+      <p>
+        Tapar Bay Marina.
+        <br />
+        <br />
+        Detta är Emils farfars (aka Drutten) stuga. Älskade Drutten, han såg
+        fram emot att få träffa er alla. Men nog tror vi att han firar med oss
+        från himlen 🤍🪽. Låt oss ta en druttskål tillsammans här! Det hade han
+        nog velat! Här sover även B-day boy, Queen Suppis, John och Angelica.
       </p>
     ),
   },
@@ -242,7 +243,7 @@ const GlobalStyles = createGlobalStyle`
             -webkit-backdrop-filter: blur(8.5px);
             border: 1px solid rgba(0, 0, 0, 0.3);
             
-            min-width: 200px;
+            min-width: 230px;
             position: absolute;
             bottom: 100%;
             left: 50%;
