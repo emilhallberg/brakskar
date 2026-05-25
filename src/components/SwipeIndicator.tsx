@@ -1,80 +1,53 @@
 "use client";
 
-import { ReactNode, useEffect, useState } from "react";
-import styled from "styled-components";
+import { useEffect, useState } from "react";
 import TapIcon from "./TapIcon";
 
-const Container = styled.div<{ $visible: boolean }>`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  top: 0;
-  right: 0;
-  background: black;
-  display: grid;
-  place-content: center;
-    z-index: 50;
-    grid-auto-rows: max-content;
-    color: white;
-
-    .move {
-        position:relative;
-        -webkit-animation: backandforth 2s ease 0s;
-        -webkit-animation-iteration-count:infinite;
-        animation: backandforth 2s ease 0s;
-        animation-iteration-count:infinite;
-    }
-
-    @-webkit-keyframes backandforth {0%{left:0;} 50%{left:58%;} 100%{left:0;}}
-
-    @keyframes backandforth {0%{left:0;} 50%{left:58%;} 100%{left:0;}}
-    
-    
-    ${({ $visible }) => {
-      if ($visible) {
-        return `
-          opacity: 0.7;
-          pointer-events: auto;
-        `;
-      }
-      return `
-          opacity: 0;
-          pointer-events: none;
-        `;
-    }}}
-`;
-
-type Props = {
-  children?: ReactNode;
-};
-
-const SwipeDownIndicator = ({ children }: Props) => {
+const SwipeDownIndicator = () => {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    const handleTouchStart = () => {
+    const hide = () => {
       setVisible(false);
     };
 
-    window.addEventListener("mousedown", handleTouchStart, { once: true });
-    window.addEventListener("touchstart", handleTouchStart, { once: true });
+    window.addEventListener("mousedown", hide, { once: true });
+    window.addEventListener("touchstart", hide, { once: true });
 
     return () => {
-      window.removeEventListener("mousedown", handleTouchStart);
-      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("mousedown", hide);
+      window.removeEventListener("touchstart", hide);
     };
   }, []);
 
   return (
-    <Container $visible={visible}>
+    <div
+      className={`absolute inset-0 z-50 grid place-content-center bg-black text-white transition-opacity ${
+        visible
+          ? "pointer-events-auto opacity-70"
+          : "pointer-events-none opacity-0"
+      }`}
+    >
       <TapIcon
         width={64}
         height={64}
-        style={{ color: "white" }}
-        className="move"
+        className="animate-[backandforth_2s_ease_infinite]"
       />
-      <h1 style={{ textAlign: "center", marginTop: "50px" }}>BRAKFEST</h1>
-    </Container>
+      <h1 className="mt-12 text-center text-4xl font-bold">BRAKFEST</h1>
+      <style jsx>{`
+        @keyframes backandforth {
+          0% {
+            transform: translateX(0);
+          }
+          50% {
+            transform: translateX(58%);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+      `}</style>
+    </div>
   );
 };
 

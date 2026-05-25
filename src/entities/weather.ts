@@ -1,9 +1,8 @@
 interface Weather {
-  name: string;
   time: string;
-  temperature: number;
-  humidity: number;
-  wind: number;
+  temperature: string;
+  humidity: string;
+  wind: string;
   windDirection: number;
 }
 

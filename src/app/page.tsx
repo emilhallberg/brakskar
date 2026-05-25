@@ -1,0 +1,49 @@
+import Section from "@/components/StartPage/Section";
+import Weather from "@/components/StartPage/Weather";
+import LandingLayout from "@/layout/LandingLayout";
+import { ranking } from "@/data/ranking";
+
+const HomePage = () => (
+  <LandingLayout>
+    <Section backgroundImage="/img/background.jpg" />
+    <Section backgroundColor="#dbc2ad">
+      <Weather />
+    </Section>
+    <Section
+      backgroundColor="#f2e5d9"
+      linkHref="/brakfest"
+      linkText="Till festen"
+    >
+      <h4>Brakfest</h4>
+      <p>Emil har fyllt 30 år och det ska firas med en Brakfest på Brakskär!</p>
+    </Section>
+    <Section
+      backgroundColor="#efdccc"
+      linkHref="/snapsvisor"
+      linkText="Ta en snaps"
+    >
+      <h4>Snapsvisor</h4>
+      <p>
+        Ta dig en snaps eller två och sjung med till de klassiska snapsvisorna
+        sjunga på Brakskär.
+      </p>
+    </Section>
+    <Section
+      backgroundColor="#f2e5d9"
+      linkHref="/ranking"
+      linkText="Se aktuell ranking"
+    >
+      <h4>Topp 3</h4>
+      <ol>
+        {ranking
+          .sort((a, b) => (a.points > b.points ? -1 : 1))
+          .slice(0, 3)
+          .map(({ id, name }) => (
+            <li key={id}>{name}</li>
+          ))}
+      </ol>
+    </Section>
+  </LandingLayout>
+);
+
+export default HomePage;

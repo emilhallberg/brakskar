@@ -10,13 +10,11 @@ interface HandleError {
 // Handles fetch errors in the Client and from BFF
 const handleError = async ({ external, error }: HandleError) => {
   if (external) {
-    // eslint-disable-next-line no-console
     console.error("Error in BFF: ", error);
     return Promise.reject(error);
   }
 
   // Message for developer when Client crashes.
-  // eslint-disable-next-line no-console
   console.error("Error in Client: ", error);
 
   // Message for user when Client crashes

@@ -1,49 +1,6 @@
-import { FC, ReactNode } from "react";
-import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
-
-const StyledSection = styled.section`
-  position: relative;
-  background: #f2e5d9;
-  border-right: 1px solid #ffffff;
-  display: grid;
-  grid-template-rows: 1fr max-content;
-  padding: 20vh 40px 40px;
-
-  li {
-    margin: 8px 0;
-  }
-  p {
-    margin: 8px 0;
-  }
-
-  a {
-    display: grid;
-    place-items: center;
-    background-color: transparent;
-    padding: 10px;
-    box-shadow: none;
-    border: 1px solid black;
-    text-decoration: none;
-    transition: background-color 200ms ease-out;
-    margin-bottom: 20px;
-    color: black;
-
-    &:visited,
-    :active,
-    :link,
-    :valid {
-      color: black;
-    }
-
-    &:hover {
-      color: white !important;
-      background-color: ${({ theme }) => theme.palette.primary};
-      border: 1px solid transparent;
-    }
-  }
-`;
+import { ReactNode } from "react";
 
 interface Props {
   backgroundImage?: string;
@@ -53,30 +10,39 @@ interface Props {
   children?: ReactNode;
 }
 
-const Section: FC<Props> = ({
+const Section = ({
   linkHref,
   linkText,
   backgroundImage,
   backgroundColor = "#f2e5d9",
   children,
-}) => (
-  <StyledSection style={{ backgroundColor, zIndex: 10 }}>
+}: Props) => (
+  <section
+    className="relative grid min-h-full grid-rows-[1fr_max-content] border-r border-white p-10 pt-[20vh]"
+    style={{ backgroundColor }}
+  >
     {backgroundImage && (
       <Image
         src={backgroundImage}
-        alt="Background"
+        alt="Brakskär"
         fill
         priority
-        style={{ objectFit: "cover", zIndex: 0 }}
+        sizes="(min-width: 768px) 360px, min(360px, 100vw)"
+        className="object-cover"
       />
     )}
-    <article style={{ zIndex: 1 }}>{children}</article>
+    <article className="relative z-10 min-w-0 [&_li]:my-2 [&_p]:my-2">
+      {children}
+    </article>
     {linkHref && (
-      <Link href={linkHref} style={{ zIndex: 1 }}>
+      <Link
+        href={linkHref}
+        className="relative z-10 mb-5 grid place-items-center border border-black p-2.5 transition hover:border-blue-700 hover:bg-blue-700 hover:text-white"
+      >
         {linkText ?? "Läs mer"}
       </Link>
     )}
-  </StyledSection>
+  </section>
 );
 
 export default Section;

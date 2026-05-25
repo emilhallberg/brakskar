@@ -1,112 +1,44 @@
-import { ReactNode } from "react";
 import Link from "next/link";
-import styled from "styled-components";
-import Clock from "../../components/Clock";
-
-const Container = styled.div`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: grid;
-  grid-auto-columns: ${({ theme }) => theme.size(6)};
-  grid-auto-flow: column;
-  z-index: 0;
-  overflow-x: auto;
-`;
-
-const Content = styled.aside`
-  position: sticky;
-  left: 0;
-  display: grid;
-  grid-template-rows: ${({ theme }) => theme.size(2)} 1fr max-content;
-  padding: ${({ theme }) => theme.spacing(3)};
-  background: ${({ theme }) => theme.palette.card};
-  z-index: 20;
-  @media (max-width: 768px) {
-    z-index: -1;
-  }
-`;
-
-const Nav = styled.nav`
-  display: flex;
-  flex-flow: column;
-  grid-template-columns: min-content;
-  a {
-    width: min-content;
-    color: ${({ theme }) => theme.palette.text};
-    font-size: 2rem;
-    font-weight: bold;
-    text-decoration: none;
-    background-image: linear-gradient(
-      to right,
-      ${({ theme }) => theme.palette.primary},
-      ${({ theme }) => theme.palette.primary} 50%,
-      #000 50%
-    );
-    background-size: 200% 100%;
-    background-position: -100%;
-    display: inline-block;
-    padding: 5px 0;
-    position: relative;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: all 0.3s ease-in-out;
-    &:before {
-      content: "";
-      background: ${({ theme }) => theme.palette.primary};
-      display: block;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 3px;
-      transition: all 0.3s ease-in-out;
-    }
-    &:hover {
-      background-position: 0;
-    }
-    &:hover::before {
-      width: 100%;
-    }
-  }
-`;
-
-const Footer = styled.footer`
-  p {
-    font-size: 0.6rem;
-  }
-  a {
-    font-size: 0.6rem;
-    color: ${({ theme }) => theme.palette.text};
-    text-decoration: none;
-  }
-`;
+import { ReactNode } from "react";
+import Clock from "@/components/Clock";
 
 interface Props {
   children: ReactNode;
 }
 
 const LandingLayout = ({ children }: Props) => (
-  <Container>
-    <Content>
+  <div className="fixed inset-0 grid auto-cols-[minmax(280px,360px)] grid-flow-col overflow-x-auto bg-[#f2e5d9] md:auto-cols-[360px]">
+    <aside className="sticky left-0 z-20 grid grid-rows-[120px_1fr_max-content] bg-white p-8 shadow-sm md:p-12">
       <Clock />
-      <Nav>
-        <Link href="/dashboard">Hem</Link>
-        <Link href="/ranking">Ranking</Link>
-        <Link href="/snapsvisor">Snapsvisor</Link>
-        <Link href="/brakfest">Brakfest</Link>
-      </Nav>
-      <Footer>
-        <p>BRAKSKÄR</p>
+      <nav className="flex flex-col items-start gap-2 text-3xl font-bold">
+        <Link className="transition-colors hover:text-blue-700" href="/ranking">
+          Ranking
+        </Link>
+        <Link
+          className="transition-colors hover:text-blue-700"
+          href="/snapsvisor"
+        >
+          Snapsvisor
+        </Link>
+        <Link
+          className="transition-colors hover:text-blue-700"
+          href="/brakfest"
+        >
+          Brakfest
+        </Link>
+      </nav>
+      <footer className="text-xs uppercase tracking-wide">
+        <p>Brakskär</p>
         <p>
-          ⇢ BY <Link href="https://hallbergemil.com">HALLBERGEMIL.COM</Link>
+          By{" "}
+          <Link className="underline" href="https://hallbergemil.com">
+            hallbergemil.com
+          </Link>
         </p>
-      </Footer>
-    </Content>
+      </footer>
+    </aside>
     {children}
-  </Container>
+  </div>
 );
 
 export default LandingLayout;

@@ -1,99 +1,33 @@
 {
   "name": "brakskar",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "types": "tsc --noemit"
-  },
-  "prettier": {
-    "semi": true,
-    "tabWidth": 2,
-    "trailingComma": "all"
-  },
-  "eslintConfig": {
-    "env": {
-      "browser": true,
-      "es2021": true
-    },
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-      "ecmaVersion": 12,
-      "sourceType": "module"
-    },
-    "settings": {
-      "import/parsers": {
-        "@typescript-eslint/parser": [
-          ".ts",
-          ".tsx"
-        ]
-      },
-      "import/resolver": {
-        "typescript": {
-          "alwaysTryTypes": true,
-          "project": "."
-        }
-      }
-    },
-    "plugins": [
-      "@typescript-eslint",
-      "prettier",
-      "import"
-    ],
-    "extends": [
-      "airbnb-base",
-      "next/core-web-vitals",
-      "prettier"
-    ],
-    "rules": {
-      "camelcase": "off",
-      "class-methods-use-this": "off",
-      "import/extensions": [
-        "error",
-        "ignorePackages",
-        {
-          "js": "never",
-          "jsx": "never",
-          "ts": "never",
-          "tsx": "never"
-        }
-      ],
-      "import/no-unresolved": "error",
-      "import/prefer-default-export": "off",
-      "prettier/prettier": "error",
-      "react-hooks/exhaustive-deps": "error",
-      "no-unused-vars": "off"
-    }
+    "lint": "eslint --cache --max-warnings=0 --ext .js,.jsx,.ts,.tsx src next.config.ts eslint.config.mjs",
+    "lint:fix": "npm run lint -- --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "types": "tsc -p tsconfig.json --noEmit --pretty false"
   },
   "dependencies": {
-    "@auth0/nextjs-auth0": "^1.9.2",
-    "auth0": "^2.44.0",
-    "css.gg": "^2.0.0",
-    "framer-motion": "^7.6.2",
-    "next": "^14.2.3",
-    "prettier": "^2.7.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "sharp": "^0.31.1",
-    "styled-components": "^6.1.8",
-    "swr": "^2.2.4",
-    "telldus-api": "^1.0.4"
+    "next": "16.2.6",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "swr": "^2.4.1"
   },
   "devDependencies": {
-    "@types/auth0": "^2.35.7",
-    "@types/node": "18.11.8",
-    "@types/react": "18.0.24",
-    "@types/styled-components": "^5.1.26",
-    "@typescript-eslint/eslint-plugin": "^5.42.0",
-    "@typescript-eslint/parser": "^5.42.0",
-    "eslint": "^8.26.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-next": "13.0.1",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "typescript": "4.8.4"
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.6",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.8.3",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
