@@ -43,7 +43,7 @@ const Section = ({
 
 const DrinkingSongsPage = () => (
   <main
-    className="grid justify-center bg-[#faf3f3] px-4 [grid-template-columns:minmax(0,400px)]"
+    className="grid justify-center bg-[#faf3f3] px-4 grid-cols-[minmax(0,400px)]"
     style={{
       backgroundImage:
         "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg stroke='%23F4D660' stroke-width='0'%3E%3Crect fill='%23F4D660' x='-60' y='-60' width='115' height='240'/%3E%3C/g%3E%3C/svg%3E\")",
@@ -51,7 +51,7 @@ const DrinkingSongsPage = () => (
   >
     <Section className="pt-[5vh]">
       <h1
-        className={`${dancingScript.className} !text-6xl !normal-case !font-normal`}
+        className={`${dancingScript.className} text-6xl! normal-case! font-normal!`}
       >
         Snapsvisor
       </h1>
@@ -72,6 +72,7 @@ const DrinkingSongsPage = () => (
       <Link href="#Helan går">Helan går</Link>
       <Link href="#Jag ska festa">Jag ska festa</Link>
       <Link href="#Små nubbarna">Små nubbarna</Link>
+      <Link href="#Jag tror på akvavit">Jag tror på akvavit</Link>
     </Section>
     <Section id="Kranmannen">
       <h1>Kranmannen</h1>
@@ -370,6 +371,22 @@ const DrinkingSongsPage = () => (
         <br />
         För ni ska ner, för ni ska ner för ni ska ner i mig.
         <br />
+      </p>
+    </Section>
+    <Section id="Jag tror på akvavit">
+      <h1>Jag tror på akvavit</h1>
+      <i>Melodi: Jag tror på sommaren 🎶</i>
+      <p>
+        Jag tror, jag tror på Akvavit
+        <br />
+        Jag tror, jag tror på dynamit
+        <br />
+        <br />
+        Den ger en kraft att sjunga ut och alla krämpor blir akut man glömmer
+        vardagslivets jäkt och känner stundens ruseffekt
+        <br />
+        <br />
+        En snaps, en skål, en trudelutt och sen så tar vi våran hutt!
       </p>
     </Section>
   </main>

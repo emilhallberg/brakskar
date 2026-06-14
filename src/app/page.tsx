@@ -10,14 +10,6 @@ const HomePage = () => (
       <Weather />
     </Section>
     <Section
-      backgroundColor="#f2e5d9"
-      linkHref="/brakfest"
-      linkText="Till festen"
-    >
-      <h4>Brakfest</h4>
-      <p>Emil har fyllt 30 år och det ska firas med en Brakfest på Brakskär!</p>
-    </Section>
-    <Section
       backgroundColor="#efdccc"
       linkHref="/snapsvisor"
       linkText="Ta en snaps"
@@ -42,6 +34,14 @@ const HomePage = () => (
             <li key={id}>{name}</li>
           ))}
       </ol>
+    </Section>
+    <Section
+      backgroundColor="#f2e5d9"
+      linkHref="/brakfest"
+      linkText="Till festen"
+    >
+      <h4>Brakfest</h4>
+      <p>Emil har fyllt 30 år och det ska firas med en Brakfest på Brakskär!</p>
     </Section>
   </LandingLayout>
 );
