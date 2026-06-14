@@ -1,7 +1,8 @@
-import Link from "next/link";
 import { Mr_De_Haviland, Bodoni_Moda } from "next/font/google";
 import type { Metadata, Viewport } from "next";
 import { ComponentPropsWithoutRef, ReactNode } from "react";
+import SnapsvisorKranmannen from "@/components/SnapsvisorKranmannen";
+import SnapsvisorSongNav from "@/components/SnapsvisorSongNav";
 
 export const metadata: Metadata = {
   title: "Snapsvisor",
@@ -28,13 +29,36 @@ const bodoniModa = Bodoni_Moda({
   display: "swap",
 });
 
+const songs = [
+  { id: "Kranmannen", title: "Kranmannen" },
+  { id: "Nubbe av granved", title: "Nubbe av granved" },
+  { id: "Köpa byxor", title: "Köpa byxor" },
+  { id: "Nu grönskar det", title: "Nu grönskar det" },
+  { id: "Pokalen", title: "Pokalen" },
+  { id: "Jag dricker brännvin", title: "Jag dricker brännvin" },
+  { id: "Nubbe goa", title: "Nubbe goa" },
+  { id: "Alla tallarna", title: "Alla tallarna" },
+  { id: "Fiktiv fest", title: "Fiktiv fest" },
+  { id: "Finsk snapsvisa", title: "Finsk snapsvisa" },
+  { id: "En gång i månan", title: "En gång i månan" },
+  { id: "Min snaps", title: "Min snaps" },
+  { id: "Vi höjer den", title: "Vi höjer den" },
+  { id: "Snapsvisa från Gällivare", title: "Snapsvisa från Gällivare" },
+  { id: "Ett litet glas till maten", title: "Ett litet glas till maten" },
+  { id: "Helan går", title: "Helan går" },
+  { id: "Jag ska festa", title: "Jag ska festa" },
+  { id: "Små nubbarna", title: "Små nubbarna" },
+  { id: "Jag tror på akvavit", title: "Jag tror på akvavit" },
+  { id: "Fyllebjörnarna", title: "Fyllebjörnarna" },
+] as const;
+
 const Section = ({
   children,
   className = "",
   ...props
 }: ComponentPropsWithoutRef<"section"> & { children: ReactNode }) => (
   <section
-    className={`relative z-0 flex min-h-[90vh] flex-col justify-center gap-2 text-center text-black [&_a]:mb-2 [&_a]:text-xl [&_a]:font-semibold [&_a]:uppercase [&_a]:text-[#0f429b] [&_a]:no-underline [&_h1]:mb-2 [&_h1]:text-2xl [&_h1]:font-semibold [&_h1]:uppercase [&_h1]:text-[#0f429b] [&_i]:text-lg [&_p]:text-lg ${bodoniModa.className} ${className}`}
+    className={`relative z-0 flex min-h-[90vh] flex-col justify-center gap-2 text-center text-[#6D7745] [&_a]:mb-2 [&_a]:text-xl [&_a]:font-semibold [&_a]:uppercase [&_a]:text-[#6D7745] [&_a]:no-underline [&_h1]:mb-2 [&_h1]:text-2xl [&_h1]:font-semibold [&_h1]:uppercase [&_h1]:text-[#6D7745] [&_i]:text-lg [&_p]:text-lg ${bodoniModa.className} ${className}`}
     {...props}
   >
     {children}
@@ -43,36 +67,20 @@ const Section = ({
 
 const DrinkingSongsPage = () => (
   <main
-    className="grid justify-center bg-[#faf3f3] px-4 grid-cols-[minmax(0,400px)]"
+    className="isolate grid justify-center bg-[#faf3f3] px-4 grid-cols-[minmax(0,400px)]"
     style={{
-      backgroundImage:
-        "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg stroke='%23F4D660' stroke-width='0'%3E%3Crect fill='%23F4D660' x='-60' y='-60' width='115' height='240'/%3E%3C/g%3E%3C/svg%3E\")",
+      backgroundImage: 'url("/img/snapsvisor-background.svg")',
+      backgroundPosition: "center center",
     }}
   >
-    <Section className="pt-[5vh]">
+    <SnapsvisorKranmannen />
+    <Section className="pt-[5vh]" id="snapsvisor-list">
       <h1
         className={`${dancingScript.className} text-6xl! normal-case! font-normal!`}
       >
         Snapsvisor
       </h1>
-      <Link href="#Kranmannen">Kranmannen</Link>
-      <Link href="#Nubbe av granved">Nubbe av granved</Link>
-      <Link href="#Köpa byxor">Köpa byxor</Link>
-      <Link href="#Nu grönskar det">Nu grönskar det</Link>
-      <Link href="#Pokalen">Pokalen</Link>
-      <Link href="#Jag dricker brännvin">Jag dricker brännvin</Link>
-      <Link href="#Nubbe goa">Nubbe goa</Link>
-      <Link href="#Alla tallarna">Alla tallarna</Link>
-      <Link href="#Fiktiv fest">Fiktiv fest</Link>
-      <Link href="#Finsk snapsvisa">Finsk snapsvisa</Link>
-      <Link href="#Min snaps">Min snaps</Link>
-      <Link href="#Vi höjer den">Vi höjer den</Link>
-      <Link href="#Snapsvisa från Gällivare">Snapsvisa från Gällivare</Link>
-      <Link href="#Ett litet glas till maten">Ett litet glas till maten</Link>
-      <Link href="#Helan går">Helan går</Link>
-      <Link href="#Jag ska festa">Jag ska festa</Link>
-      <Link href="#Små nubbarna">Små nubbarna</Link>
-      <Link href="#Jag tror på akvavit">Jag tror på akvavit</Link>
+      <SnapsvisorSongNav songs={songs} />
     </Section>
     <Section id="Kranmannen">
       <h1>Kranmannen</h1>
@@ -141,8 +149,9 @@ const DrinkingSongsPage = () => (
     <Section id="Jag dricker brännvin">
       <h1>Jag dricker brännvin</h1>
       <p>
-        Jag dricker brännvin nu mens jag lever, när jag är dö så har jag inte
-        tid.
+        Jag dricker brännvin nu mens jag lever,
+        <br />
+        när jag är dö så har jag inte tid
         <br />
         <br />
         När som jag själver ligger i mull, kan jag väl inte supa mig full.
@@ -197,7 +206,7 @@ const DrinkingSongsPage = () => (
       <h1>Finsk snapsvisa</h1>
       <p>Int nu, men NU!</p>
     </Section>
-    <Section>
+    <Section id="En gång i månan">
       <h1>En gång i månan</h1>
       <i>Melodi: Mors lilla Olle 🎶</i>
       <p>
@@ -388,6 +397,33 @@ const DrinkingSongsPage = () => (
         <br />
         En snaps, en skål, en trudelutt och sen så tar vi våran hutt!
       </p>
+    </Section>
+    <Section id="Fyllebjörnarna">
+      <h1>Fyllebjörnarna</h1>
+      <i>Melodi: Bumbibjörnarna 🎶</i>
+      Hick hurra!
+      <br />
+      För här kommer fyllebjörnarna, ramlar fram igenom sagorna
+      <br />
+      <br />
+      Åh vi får supa mer!
+      <br />
+      <br />
+      Fyllebjörnsaften, den magiska kraften
+      <br />
+      O visst blir man full man dricker utav den
+      <br />
+      <br />
+      Ondska och törnar, det klarar fyllebjörnar De kämpar och spriten segrar
+      igen!
+      <br />
+      <br />
+      Hick hurra!
+      <br />
+      För här kommer fyllebjörnarna, ramlar fram igenom sagorna
+      <br />
+      <br />
+      Åh vi får supa mer! Skål!
     </Section>
   </main>
 );
