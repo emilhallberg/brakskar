@@ -36,6 +36,8 @@ const RankingPage = () => (
     <section className="grid gap-3">
       <h2 className="text-2xl font-bold">Senaste tävlingar</h2>
       <ul className="list-disc pl-5">
+        <li>Brakskär Open 2025</li>
+        <li>Brakskär Open 2024</li>
         <li>Julpadel 2023</li>
         <li>Brakskär Open 2023</li>
         <li>Midsommar 2023 - Lekar</li>
