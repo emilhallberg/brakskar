@@ -37,6 +37,14 @@ const HomePage = () => (
     </Section>
     <Section
       backgroundColor="#f2e5d9"
+      linkHref="/kanban"
+      linkText="Öppna kanban"
+    >
+      <h4>Kanban</h4>
+      <p>Midsommarens todo-lista med TODO, DOING och DONE.</p>
+    </Section>
+    <Section
+      backgroundColor="#f2e5d9"
       linkHref="/brakfest"
       linkText="Till festen"
     >
